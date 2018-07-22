@@ -1,0 +1,153 @@
+\documentclass[a4paper]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage{ascmac, here, txfonts, txfonts}
+\usepackage{listings,jlisting}
+\usepackage[dvipdfmx]{color}
+
+\lstset{
+	%プログラム言語(複数の言語に対応，C,C++も可)
+ 	language = C++,
+ 	%背景色と透過度
+ 	backgroundcolor={\color[gray]{.90}},
+ 	%枠外に行った時の自動改行
+ 	breaklines = true,
+ 	%自動改行後のインデント量(デフォルトでは20[pt])
+ 	breakindent = 10pt,
+ 	%標準の書体
+ 	basicstyle = \ttfamily\scriptsize,
+ 	%コメントの書体
+ 	commentstyle = {\itshape \color[cmyk]{1,0.4,1,0}},
+ 	%関数名等の色の設定
+ 	classoffset = 0,
+ 	%キーワード(int, ifなど)の書体
+ 	keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}},
+ 	%表示する文字の書体
+ 	stringstyle = {\ttfamily \color[rgb]{0,0,1}},
+ 	%枠 "t"は上に線を記載, "T"は上に二重線を記載
+	%他オプション：leftline，topline，bottomline，lines，single，shadowbox
+ 	frame = TBrl,
+ 	%frameまでの間隔(行番号とプログラムの間)
+ 	framesep = 5pt,
+ 	%行番号の位置
+ 	numbers = left,
+	%行番号の間隔
+ 	stepnumber = 1,
+	%行番号の書体
+ 	numberstyle = \tiny,
+	%タブの大きさ
+ 	tabsize = 4,
+ 	%キャプションの場所("tb"ならば上下両方に記載)
+ 	captionpos = t
+}
+
+\setlength{\topmargin}{-0.3in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textheight}{46\baselineskip}
+\setlength{\textwidth}{47zw}
+
+\makeatletter
+
+\def\@thesis{個人開発用仕様書}
+\def\id#1{\def\@id{#1}}
+\def\department#1{\def\@department{#1}}
+
+\def\@maketitle{
+\begin{center}
+{\huge \@thesis \par} %修士論文と記載される部分
+\vspace{10mm}
+{\LARGE\bf \@title \par}% 論文のタイトル部分
+\vspace{10mm}
+{\Large \@date\par}	% 提出年月日部分
+\vspace{20mm}
+{\Large \@department \par}	% 所属部分
+{\Large No.　\@id \par}	% 学籍番号部分
+\vspace{10mm}
+{\large \@author}% 氏名
+\end{center}
+\par\vskip 1.5em
+}
+
+\makeatother
+
+\title{Pokemon Card Game}
+\date{2018. . }
+\department{}
+\id{}
+\author{}
+
+\begin{document}
+\maketitle
+\newpage
+%目次の表示
+\tableofcontents
+
+%表目時の表示
+\listoftables
+
+% 図目次の表示
+\listoffigures
+\newpage
+%章
+\section{名称}
+\begin{table}[H]
+  \begin{tabular}{cc}
+    ゲーム名称 & 「Pokemon Card Game -PKC-(ポケカ)」\\
+    &\\
+    機能1 & vs AI \\
+    &\\
+    機能2 & vs Friend \\
+    &\\
+    機能3 & vs Deck manager\\
+    &\\
+    機能4 & vs Card List \\
+
+  \end{tabular}
+\end{table}
+
+%章
+\section{参考イメージ}
+  Pokemon Trading Card Game Onlineの日本語版及びUI等はオリジナルにしたい。
+
+\section{概要}
+  ポケモントレーディングカードゲーム(以下、ポケカ)をソフトウェアとして実装し、ポケカユーザーの支援を行う。
+  基本的な機能は以下のとおりである。
+  \begin{itemize}
+    \item AIとの対戦
+    \item 対人戦(オフライン)
+    \item デッキ構築
+    \item カード図鑑
+  \end{itemize}
+
+  機能1は一人でも対戦を楽しむことができ、また新戦術の試運転にも活用できる。
+  機能2はあたかも友人と実際のカードでポケカ対戦を行っているかのような気分になれる。
+  機能3は対戦に不可欠なデッキの作成を行える。
+  機能4はコレクターにはたまらない歴代カードの図鑑である。
+
+%参考文献
+\begin{thebibliography}{n}
+	\bibitem[opt1]{key1} 文献情報
+	\bibitem[opt2]{key2} 文献情報
+\end{thebibliography}
+
+%改頁
+\newpage
+
+%付録
+%\section*{付録}
+%	測定データの一次資料等を付録として添付する。
+%
+%	%画像の張りつけ
+%        %画像はターミナルにて、$ ebb file_name して.bbファイルを作成する
+%	\begin{figure}[htbp]
+%		\begin{center}
+%			\includegraphics[width=0.9\textwidth]{file path}
+%			\caption{図の名前}
+%			\label{fig:winter}
+%		\end{center}
+%	\end{figure}
+%%改頁
+%	\newpage
+
+\end{document}
